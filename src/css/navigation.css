@@ -1,0 +1,104 @@
+/********** Navigation **********/
+nav {
+  background-color: #ecfee8;
+  color: #042a2b;
+  position: relative;
+  width: 100%;
+}
+/* Turn the navbar link horizontally */
+nav ul {
+  list-style: none;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+nav ul .homeIcon {
+  margin-right: auto;
+}
+/* Pushes Dropdown and Links to right */
+nav ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#settingsToggle {
+  display: block;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 40px;
+}
+
+nav ul li > ul {
+  visibility: hidden; /* Hidden by default */
+  opacity: 0; /* Fully transparent */
+  transform: translateY(-10px); /* Slide slightly upwards when hidden */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100vw;
+  background: #042a2b;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+  transition: opacity 1s ease, transform 2s ease; /* Smooth fade and slide */
+}
+
+nav ul li.open > ul {
+  visibility: visible; /* Make it visible */
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Slide down into place */
+}
+
+/* Menu Anchors Design */
+nav ul li.open > ul > li > a {
+  display: block;
+  padding: 2rem 0;
+  text-decoration: none;
+  color: #ecfee8;
+  font-size: 24px;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+nav ul li.open > ul > li > a:hover {
+  color: #ee6c4d;
+  transform: scale(1.2);
+}
+
+/****** Medium Screen *****/
+@media (min-width: 768px) {
+  #settingsToggle {
+    display: none;
+  }
+  nav ul li > ul {
+    display: flex;
+    position: relative; /* Positioning it relative to the nearest positioned ancestor (nav) */
+    top: 0%; /* Position the dropdown directly below the nav bar */
+    right: 0; /* Start from the right edge of the screen */
+    width: auto; /* Take the full width of the viewport */
+    background: none;
+    flex-direction: row; /* Makes a Column for anchors */
+    margin: 0;
+    padding: 0 40px;
+    z-index: 1; /* Ensure it is above other content */
+  }
+
+  /* Menu Anchors Design */
+  nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #042a2b;
+    margin: 0 24px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: transform 0.6s ease-in-out, color 0.4s ease-in-out;
+  }
+  /* Menu Anchors Hover */
+  nav ul li a:hover {
+    transform: scale(1.2);
+    color: #ee6c4d;
+  }
+}
