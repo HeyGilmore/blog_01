@@ -30,25 +30,26 @@ nav ul li {
 }
 
 nav ul li > ul {
-  visibility: hidden; /* Hidden by default */
-  opacity: 0; /* Fully transparent */
-  transform: translateY(-10px); /* Slide slightly upwards when hidden */
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 100vw;
+  display: none;
+  position: absolute; /* Positioning it relative to the nearest positioned ancestor (nav) */
+  top: 100%; /* Position the dropdown directly below the nav bar */
+  right: 0; /* Start from the right edge of the screen */
+  width: 100vw; /* Take the full width of the viewport */
   background: #042a2b;
-  flex-direction: column;
+  flex-direction: column; /* Makes a Column for anchors */
   margin: 0;
   padding: 0;
-  z-index: 1000;
-  transition: opacity 1s ease, transform 2s ease; /* Smooth fade and slide */
+  z-index: 1000; /* Ensure it is above other content */
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* When open, show the dropdown */
 nav ul li.open > ul {
-  visibility: visible; /* Make it visible */
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Slide down into place */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transform: scaleY(1);
 }
 
 /* Menu Anchors Design */
