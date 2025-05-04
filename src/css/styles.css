@@ -22,3 +22,13 @@ body {
   font-optical-sizing: auto;
 }
 
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ecfee8;
+  color: #042a2b;
+  text-align: center;
+  padding: 4px 0;
+}
