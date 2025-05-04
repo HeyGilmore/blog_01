@@ -4,3 +4,8 @@ import "../css/Navigation.css";
 
 // Navigation Drop Down
 import "./navigationDropdown";
+// Style of webpage
+import gridLayout from "./gridLayout";
+
+
+gridLayout();
